@@ -61,7 +61,7 @@ RSpec.describe TowersOfHanoi do
       game.move(0, 2)
       game.move(1, 0)
       game.move(1, 2)
-      game.move(0 ,2)
+      game.move(0, 2)
       expect(game.won?).to be true
     end
   end

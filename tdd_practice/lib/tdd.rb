@@ -37,6 +37,34 @@ class TDD
 
     result
   end
+
+  def stock_picker(prices)
+    highest_pair = []
+
+    (0...prices.length - 1).each do |idx1|
+      buy_price = prices[idx1]
+
+      (idx1+1...prices.length).each do |idx2|
+        sell_price = prices[idx2]
+
+        next if buy_price >= sell_price
+
+        current_profit = sell_price - buy_price
+
+        if highest_pair.empty?
+          highest_pair = [idx1, idx2]
+        else
+          highest_profit = prices[highest_pair[1]] -
+                            prices[highest_pair[0]]
+          if current_profit > highest_profit
+            highest_pair = [idx1, idx2]
+          end
+        end
+      end
+    end
+
+    highest_pair
+  end
 end
 
 

@@ -57,4 +57,24 @@ RSpec.describe TDD do
       ])
     end
   end
+
+  describe "#stock_picker" do
+    context "descending stock prices" do
+      it "does not return buy date after the sell date" do
+        expect(tdd.stock_picker([100, 2, 5, 0])).to_not eq([3, 0])
+      end
+
+      it "returns an empty array if all prices are descending" do
+        expect(tdd.stock_picker([100, 90, 80, 70])).to eq([])
+      end
+
+    end
+
+    context "ascending stock prices" do
+      it "returns the optimal pair of days" do
+        expect(tdd.stock_picker([100, 2, 5, 0])).to eq([1, 2])
+      end
+
+    end
+  end
 end

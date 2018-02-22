@@ -45,25 +45,11 @@ RSpec.describe TowersOfHanoi do
 
     let(:game1) { TowersOfHanoi.new([[], [1, 2, 3], []]) }
     it "checks if piles 0 and 2 are empty" do
-      # game.move(0, 1)
-      # game.move(0, 2)
-      # game.move(1, 2)
-      # game.move(0, 1)
-      # game.move(2, 0)
-      # game.move(2, 1)
-      # game.move(0, 1)
       expect(game1).to be_won
     end
 
     let(:game2) { TowersOfHanoi.new([[], [], [1, 2, 3]]) }
     it "checks if piles 0 and 1 are empty" do
-      # game.move(0, 2)
-      # game.move(0, 1)
-      # game.move(2, 1)
-      # game.move(0, 2)
-      # game.move(1, 0)
-      # game.move(1, 2)
-      # game.move(0, 2)
       expect(game2).to be_won
     end
   end

@@ -3,8 +3,8 @@ require 'byebug'
 class TowersOfHanoi
   attr_reader :piles
 
-  def initialize
-    @piles = [[1, 2, 3], [], []]
+  def initialize(piles = nil)
+    @piles = piles || [[1, 2, 3], [], []]
   end
 
   def move(start_pos, end_pos)
